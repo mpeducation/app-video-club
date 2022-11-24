@@ -1,0 +1,20 @@
+<h1>Listado de películas (Público)</h1>
+
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Año</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each peliculas}}
+    <tr>
+      <th scope="row">{{this.title}}</th>
+      <td>{{this.genre}}</td>
+      <td>{{this.year}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

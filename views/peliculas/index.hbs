@@ -1,0 +1,30 @@
+<h1>Listado de películas (CRUD)</h1>
+
+<a class="btn btn-success mt-5" href="/peliculas/create">Crear película</a>
+
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Año</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each peliculas}}
+    <tr>
+      <th scope="row">{{this.title}}</th>
+      <td>{{this.genre}}</td>
+      <td>{{this.year}}</td>
+      <td>
+        <a href="/peliculas/{{this._id}}" class="btn btn-secondary">Ver...</a>
+        <a href="/peliculas/edit/{{this._id}}" class="btn btn-warning">Editar</a>
+        <form class="d-inline" action="/peliculas/{{this._id}}?_method=DELETE" method="post">
+          <button class="btn btn-danger">Eliminar</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
